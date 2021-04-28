@@ -1,61 +1,108 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 
-function Helloworld() {
-  return (
-    <div className="hola_mundo">
-      <h2>vengo de la funcion Helloworld</h2>
-    </div>
-  );
-}
+// function Helloworld(props) {
+//   return (
+//     <div className="hola_mundo">
+//       <h1>Suntitulo: {props.subtitle}</h1>
+//       <h2>vengo de la funcion {props.mytext}</h2>
+//     </div>
+//   );
+// }
 
-// syntaxis como clase
-// para funcionar necesita
-// import React from "react";
+// // dentro de una clase hay que usar this porque ahora
+// // es una propiedad.
 
-// class App extends React.Component {
+// // dentro de la clase podemos crear estados
+// class ComponenteNuevo extends React.Component {
+//   state = {
+//     show: true,
+//   };
+
+//   // negamos el estado actual del estado.
+//   // inicia en true, y lo negamos a false
+//   // cambia a false y lo convertimos en true
+//   toogleShow = () => {
+//     this.setState({ show: !this.state.show });
+//   };
+
 //   render() {
-//     return (
-//       <div>
-//         <h1>hola mundo </h1>
-//         <Helloworld />
-//         <Helloworld />
-//         <Helloworld />
-//         <Helloworld />
-//         <Helloworld />
-//       </div>
-//     );
+//     if (this.state.show) {
+//       return (
+//         <div className="hola_mundo">
+//           <h1>Subtitle: {this.props.subtitle}</h1>
+//           <button onClick={this.toogleShow}>Cambiar el estado de SHOW</button>
+//         </div>
+//       );
+//     } else {
+//       return (
+//         <div>
+//           <h1>No hay nada para renderizar</h1>
+//           <button onClick={this.toogleShow}>Cambiar el estado de SHOW</button>
+//         </div>
+//       );
+//     }
 //   }
 // }
 
-// syntaxis funcion flecha
+// // syntaxis como clase
+// // para funcionar necesita
+// // import React from "react";
 
-// const App = () => {
+// // class App extends React.Component {
+// //   render() {
+// //     return (
+// //       <div>
+// //         <h1>hola mundo </h1>
+// //         <Helloworld />
+// //         <Helloworld />
+// //         <Helloworld />
+// //         <Helloworld />
+// //         <Helloworld />
+// //       </div>
+// //     );
+// //   }
+// // }
+
+// // syntaxis funcion flecha
+
+// // const App = () => {
+// //   return (
+// //     <div>
+// //       <h1>hola mundo </h1>
+// //       <Helloworld />
+// //       <Helloworld />
+// //       <Helloworld />
+// //       <Helloworld />
+// //       <Helloworld />
+// //     </div>
+// //   );
+// // };
+
+// // funcion normal
+
+// function App() {
 //   return (
 //     <div>
 //       <h1>hola mundo </h1>
-//       <Helloworld />
-//       <Helloworld />
-//       <Helloworld />
-//       <Helloworld />
-//       <Helloworld />
+//       <Helloworld mytext="HolaMinecraft" subtitle="PRIMER H1" />
+//       <Helloworld mytext="este es el segundo texto" subtitle="PRIMER H2" />
+//       <Helloworld mytext="funciona?" subtitle="PRIMER H3" />
+//       <ComponenteNuevo subtitle="H1 DESDE COMPONENTE NUEVO" />
+//       <ComponenteNuevo subtitle="H1 DESDE COMPONENTE NUEVO" />
+//       <ComponenteNuevo subtitle="H1 DESDE COMPONENTE NUEVO" />
 //     </div>
 //   );
-// };
+// }
 
-// funcion normal
-
-function App() {
-  return (
-    <div>
-      <h1>hola mundo </h1>
-      <Helloworld />
-      <Helloworld />
-      <Helloworld />
-      <Helloworld />
-      <Helloworld />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <h1>hola</h1>
+      </div>
+    );
+  }
 }
 
 export default App;
