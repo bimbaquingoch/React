@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import tareas from "./sample/task.json";
-import Task from "./components/Tasks";
+import Tasks from "./components/Tasks";
 
 // function Helloworld(props) {
 //   return (
@@ -105,7 +105,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Task trabajo={this.state.tareas} />
+        <Tasks trabajo={this.state.tareas} />
       </div>
     );
   }
