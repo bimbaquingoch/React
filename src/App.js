@@ -9,6 +9,9 @@ import TareasJson from "./sample/task.json";
 // importamos el componente Task
 import Tasks from "./components/Tasks";
 
+// formularios con React
+import Formulario from "./components/Formulario";
+
 class App extends Component {
   //definimos el estado del JSON
   state = {
@@ -18,6 +21,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Formulario />
         <Tasks tareas={this.state.tareas} />
       </div>
     );
