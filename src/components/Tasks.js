@@ -4,9 +4,10 @@ import Task from "./Task";
 class Tasks extends Component {
   render() {
     // recorremos el elementos de tareas
-    return this.props.trabajo.map((tareas) => (
-      <Task propiedades={tareas} key={tareas.id} />
-    ));
+    // y se genera una única tarea
+    // este componente toma los datos y los envia al
+    // componente Task
+    return this.props.tareas.map((e) => <Task propiedades={e} key={e.id} />);
   }
 }
 
