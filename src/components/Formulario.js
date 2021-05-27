@@ -13,7 +13,7 @@ class Formulario extends Component {
     evento.preventDefault();
     // una vez escrito el titulo y la descripcion, con esto
     // enciando el formulario ya se guardan el estado de estos elementos
-    console.log(this.state);
+    this.props.addTarea(this.state.title, this.state.description);
   };
 
   cambiarInputs = (evento) => {
@@ -23,7 +23,7 @@ class Formulario extends Component {
       // etiqueta
       [evento.target.name]: evento.target.value,
     });
-    console.log(evento.target.name, "  ", evento.target.value);
+    // console.log(evento.target.name, "  ", evento.target.value);
   };
 
   render() {
