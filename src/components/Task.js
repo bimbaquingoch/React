@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./style.css";
+// import "./style.css";
 
 // nos ayudan a marcar el tipo de dato
 // que es el prop que estamos recibiendo
