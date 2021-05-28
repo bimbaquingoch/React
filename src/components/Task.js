@@ -21,8 +21,16 @@ class Task extends Component {
       <p className="redi" style={this.styleCompleto()}>
         {propiedades.title} -{propiedades.description} -{propiedades.id} -
         {propiedades.done}
-        <input type="checkbox" />
-        <button style={btnDelete}>X</button>
+        <input
+          type="checkbox"
+          onChange={this.props.checkDone.bind(this, propiedades.id)}
+        />
+        <button
+          style={btnDelete}
+          onClick={this.props.deleteTask.bind(this, propiedades.id)}
+        >
+          X
+        </button>
       </p>
     );
   }

@@ -37,12 +37,36 @@ class App extends Component {
     });
   };
 
+  deleteTask = (id) => {
+    const newTask = this.state.tareas.filter((tarea) => tarea.id !== id);
+    // guardamos el state ocultando los elementos
+    this.setState({
+      tareas: newTask,
+    });
+  };
+
+  checkDone = (id) => {
+    const newTask = this.state.tareas.map((tarea) => {
+      if (tarea.id === id) {
+        tarea.done = !tarea.done;
+      }
+      return tarea;
+    });
+    // una vez cambiado el estado de done, lo guarados en
+    // el state usando setState
+    this.setState({ tareas: newTask });
+  };
+
   // desde este estado enviamos la informacion al componente Tasks
   render() {
     return (
       <div>
         <Formulario addTarea={this.addTarea} />
-        <Tasks tareas={this.state.tareas} />
+        <Tasks
+          tareas={this.state.tareas}
+          deleteTask={this.deleteTask}
+          checkDone={this.checkDone}
+        />
       </div>
     );
   }
