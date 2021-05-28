@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import Posts from "./components/Posts";
+// primero instalar react-router-dom
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
 // importamos el objeto JSON
 import TareasJson from "./sample/task.json";
@@ -62,13 +64,33 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Formulario addTarea={this.addTarea} />
-        <Tasks
-          tareas={this.state.tareas}
-          deleteTask={this.deleteTask}
-          checkDone={this.checkDone}
-        />
-        <Posts />
+        {/*
+        Las rutas van dentro de Router y Route es la ruta
+        */}
+        <Router>
+          <Link to="/">Home</Link>
+          <br />
+          <Link to="/posts">Posts</Link>
+          <Route
+            exact
+            path="/"
+            render={() => {
+              return (
+                <div>
+                  <Formulario addTarea={this.addTarea} />
+                  <Tasks
+                    tareas={this.state.tareas}
+                    deleteTask={this.deleteTask}
+                    checkDone={this.checkDone}
+                  />
+                </div>
+              );
+            }}
+          />
+          <Route exact path="/posts" component={Posts} />
+        </Router>
+
+        {/* <Posts /> */}
       </div>
     );
   }
