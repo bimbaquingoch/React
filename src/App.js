@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import Posts from "./components/Posts";
 
 // importamos el objeto JSON
 import TareasJson from "./sample/task.json";
@@ -67,6 +68,7 @@ class App extends Component {
           deleteTask={this.deleteTask}
           checkDone={this.checkDone}
         />
+        <Posts />
       </div>
     );
   }
